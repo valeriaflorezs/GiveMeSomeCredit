@@ -1,8 +1,8 @@
 # Configuración del libro Jupyter Book
 # Referencia completa: https://jupyterbook.org/customize/config.html
 
-title: GiveMeSomeCredit
-author: Valeria Florez
+title: "Give Me Some Credit: Predicción de Riesgo Crediticio"
+author: Valeria Flórez y Katherin Barrera
 logo: ""
 
 # Forzar re-ejecución de los notebooks en cada build.
@@ -20,3 +20,9 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# Copia paper.pdf tal cual a la raíz del sitio construido, para poder
+# embeberlo/enlazarlo desde paper.md con una ruta relativa estable.
+sphinx:
+  config:
+    html_extra_path: ["paper.pdf"]

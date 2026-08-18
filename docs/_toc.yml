@@ -7,4 +7,5 @@
 format: jb-book
 root: intro
 chapters:
+  - file: paper
   - file: analisis_exploratorio
