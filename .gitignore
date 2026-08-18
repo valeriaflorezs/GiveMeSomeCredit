@@ -1,0 +1,12 @@
+# Entorno virtual local (no se sube al repo)
+.venv/
+
+# Salida generada por Jupyter Book (se publica aparte en la rama gh-pages)
+docs/_build/
+
+# Checkpoints de Jupyter
+.ipynb_checkpoints/
+
+# Cache de Python
+__pycache__/
+*.pyc

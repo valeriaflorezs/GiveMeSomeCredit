@@ -1,0 +1,10 @@
+# Tabla de contenidos del libro.
+# Para agregar un nuevo notebook como capítulo en el futuro:
+#   1. Copia el archivo .ipynb dentro de esta carpeta docs/
+#   2. Agrega una nueva línea "- file: nombre_del_notebook" (sin la extensión .ipynb) bajo "chapters:"
+#   3. Vuelve a construir el libro (jupyter-book build docs/) y publica de nuevo (ghp-import)
+
+format: jb-book
+root: intro
+chapters:
+  - file: analisis_exploratorio

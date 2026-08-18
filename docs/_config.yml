@@ -1,0 +1,22 @@
+# Configuración del libro Jupyter Book
+# Referencia completa: https://jupyterbook.org/customize/config.html
+
+title: GiveMeSomeCredit
+author: Valeria Florez
+logo: ""
+
+# Forzar re-ejecución de los notebooks en cada build.
+# "off" usa las salidas ya guardadas en el .ipynb (más rápido y reproducible para publicar).
+execute:
+  execute_notebooks: "off"
+
+# Información del repositorio (para el botón "open in GitHub" / "suggest edit")
+repository:
+  url: https://github.com/valeriaflorezs/GiveMeSomeCredit
+  path_to_book: docs
+  branch: main
+
+# Opciones de la página HTML
+html:
+  use_issues_button: true
+  use_repository_button: true
