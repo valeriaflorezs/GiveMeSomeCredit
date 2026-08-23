@@ -438,13 +438,13 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-general">7. Conclusión general</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-predictivo-regresion-logistica-con-regularizacion-ridge-y-lasso">8. Modelado predictivo: Regresión Logística con regularización (Ridge y Lasso)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-predictivo-regresion-logistica">8. Modelado predictivo: Regresión Logística</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparacion-de-los-datos">8.1 Preparación de los datos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables-division-train-test-y-escalado">8.2 Selección de variables, división train/test y escalado</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-de-los-modelos">8.3 Ajuste de los modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-del-modelo">8.3 Ajuste del modelo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-score-error-y-auc-roc">8.4 Evaluación: score, error y AUC-ROC</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-efecto-de-la-regularizacion">8.5 Coeficientes: efecto de la regularización</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion-reporte-de-clasificacion-y-curva-roc-del-mejor-modelo">8.6 Matriz de confusión, reporte de clasificación y curva ROC del mejor modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-del-modelo">8.5 Coeficientes del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion-reporte-de-clasificacion-y-curva-roc">8.6 Matriz de confusión, reporte de clasificación y curva ROC</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.7 Síntesis</a></li>
 </ul>
 </li>
@@ -559,70 +559,70 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_a3b34">
+<table id="T_d541f">
   <caption>Diccionario de variables — Kaggle Data Dictionary (GiveMeSomeCredit)</caption>
   <thead>
     <tr>
-      <th id="T_a3b34_level0_col0" class="col_heading level0 col0" >Variable</th>
-      <th id="T_a3b34_level0_col1" class="col_heading level0 col1" >Descripción</th>
-      <th id="T_a3b34_level0_col2" class="col_heading level0 col2" >Tipo</th>
+      <th id="T_d541f_level0_col0" class="col_heading level0 col0" >Variable</th>
+      <th id="T_d541f_level0_col1" class="col_heading level0 col1" >Descripción</th>
+      <th id="T_d541f_level0_col2" class="col_heading level0 col2" >Tipo</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td id="T_a3b34_row0_col0" class="data row0 col0" >SeriousDlqin2yrs</td>
-      <td id="T_a3b34_row0_col1" class="data row0 col1" >Person experienced 90 days past due delinquency or worse </td>
-      <td id="T_a3b34_row0_col2" class="data row0 col2" >Y/N</td>
+      <td id="T_d541f_row0_col0" class="data row0 col0" >SeriousDlqin2yrs</td>
+      <td id="T_d541f_row0_col1" class="data row0 col1" >Person experienced 90 days past due delinquency or worse </td>
+      <td id="T_d541f_row0_col2" class="data row0 col2" >Y/N</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row1_col0" class="data row1 col0" >RevolvingUtilizationOfUnsecuredLines</td>
-      <td id="T_a3b34_row1_col1" class="data row1 col1" >Total balance on credit cards and personal lines of credit except real estate and no installment debt like car loans divided by the sum of credit limits</td>
-      <td id="T_a3b34_row1_col2" class="data row1 col2" >percentage</td>
+      <td id="T_d541f_row1_col0" class="data row1 col0" >RevolvingUtilizationOfUnsecuredLines</td>
+      <td id="T_d541f_row1_col1" class="data row1 col1" >Total balance on credit cards and personal lines of credit except real estate and no installment debt like car loans divided by the sum of credit limits</td>
+      <td id="T_d541f_row1_col2" class="data row1 col2" >percentage</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row2_col0" class="data row2 col0" >age</td>
-      <td id="T_a3b34_row2_col1" class="data row2 col1" >Age of borrower in years</td>
-      <td id="T_a3b34_row2_col2" class="data row2 col2" >integer</td>
+      <td id="T_d541f_row2_col0" class="data row2 col0" >age</td>
+      <td id="T_d541f_row2_col1" class="data row2 col1" >Age of borrower in years</td>
+      <td id="T_d541f_row2_col2" class="data row2 col2" >integer</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row3_col0" class="data row3 col0" >NumberOfTime30-59DaysPastDueNotWorse</td>
-      <td id="T_a3b34_row3_col1" class="data row3 col1" >Number of times borrower has been 30-59 days past due but no worse in the last 2 years.</td>
-      <td id="T_a3b34_row3_col2" class="data row3 col2" >integer</td>
+      <td id="T_d541f_row3_col0" class="data row3 col0" >NumberOfTime30-59DaysPastDueNotWorse</td>
+      <td id="T_d541f_row3_col1" class="data row3 col1" >Number of times borrower has been 30-59 days past due but no worse in the last 2 years.</td>
+      <td id="T_d541f_row3_col2" class="data row3 col2" >integer</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row4_col0" class="data row4 col0" >DebtRatio</td>
-      <td id="T_a3b34_row4_col1" class="data row4 col1" >Monthly debt payments, alimony,living costs divided by monthy gross income</td>
-      <td id="T_a3b34_row4_col2" class="data row4 col2" >percentage</td>
+      <td id="T_d541f_row4_col0" class="data row4 col0" >DebtRatio</td>
+      <td id="T_d541f_row4_col1" class="data row4 col1" >Monthly debt payments, alimony,living costs divided by monthy gross income</td>
+      <td id="T_d541f_row4_col2" class="data row4 col2" >percentage</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row5_col0" class="data row5 col0" >MonthlyIncome</td>
-      <td id="T_a3b34_row5_col1" class="data row5 col1" >Monthly income</td>
-      <td id="T_a3b34_row5_col2" class="data row5 col2" >real</td>
+      <td id="T_d541f_row5_col0" class="data row5 col0" >MonthlyIncome</td>
+      <td id="T_d541f_row5_col1" class="data row5 col1" >Monthly income</td>
+      <td id="T_d541f_row5_col2" class="data row5 col2" >real</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row6_col0" class="data row6 col0" >NumberOfOpenCreditLinesAndLoans</td>
-      <td id="T_a3b34_row6_col1" class="data row6 col1" >Number of Open loans (installment like car loan or mortgage) and Lines of credit (e.g. credit cards)</td>
-      <td id="T_a3b34_row6_col2" class="data row6 col2" >integer</td>
+      <td id="T_d541f_row6_col0" class="data row6 col0" >NumberOfOpenCreditLinesAndLoans</td>
+      <td id="T_d541f_row6_col1" class="data row6 col1" >Number of Open loans (installment like car loan or mortgage) and Lines of credit (e.g. credit cards)</td>
+      <td id="T_d541f_row6_col2" class="data row6 col2" >integer</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row7_col0" class="data row7 col0" >NumberOfTimes90DaysLate</td>
-      <td id="T_a3b34_row7_col1" class="data row7 col1" >Number of times borrower has been 90 days or more past due.</td>
-      <td id="T_a3b34_row7_col2" class="data row7 col2" >integer</td>
+      <td id="T_d541f_row7_col0" class="data row7 col0" >NumberOfTimes90DaysLate</td>
+      <td id="T_d541f_row7_col1" class="data row7 col1" >Number of times borrower has been 90 days or more past due.</td>
+      <td id="T_d541f_row7_col2" class="data row7 col2" >integer</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row8_col0" class="data row8 col0" >NumberRealEstateLoansOrLines</td>
-      <td id="T_a3b34_row8_col1" class="data row8 col1" >Number of mortgage and real estate loans including home equity lines of credit</td>
-      <td id="T_a3b34_row8_col2" class="data row8 col2" >integer</td>
+      <td id="T_d541f_row8_col0" class="data row8 col0" >NumberRealEstateLoansOrLines</td>
+      <td id="T_d541f_row8_col1" class="data row8 col1" >Number of mortgage and real estate loans including home equity lines of credit</td>
+      <td id="T_d541f_row8_col2" class="data row8 col2" >integer</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row9_col0" class="data row9 col0" >NumberOfTime60-89DaysPastDueNotWorse</td>
-      <td id="T_a3b34_row9_col1" class="data row9 col1" >Number of times borrower has been 60-89 days past due but no worse in the last 2 years.</td>
-      <td id="T_a3b34_row9_col2" class="data row9 col2" >integer</td>
+      <td id="T_d541f_row9_col0" class="data row9 col0" >NumberOfTime60-89DaysPastDueNotWorse</td>
+      <td id="T_d541f_row9_col1" class="data row9 col1" >Number of times borrower has been 60-89 days past due but no worse in the last 2 years.</td>
+      <td id="T_d541f_row9_col2" class="data row9 col2" >integer</td>
     </tr>
     <tr>
-      <td id="T_a3b34_row10_col0" class="data row10 col0" >NumberOfDependents</td>
-      <td id="T_a3b34_row10_col1" class="data row10 col1" >Number of dependents in family excluding themselves (spouse, children etc.)</td>
-      <td id="T_a3b34_row10_col2" class="data row10 col2" >integer</td>
+      <td id="T_d541f_row10_col0" class="data row10 col0" >NumberOfDependents</td>
+      <td id="T_d541f_row10_col1" class="data row10 col1" >Number of dependents in family excluding themselves (spouse, children etc.)</td>
+      <td id="T_d541f_row10_col2" class="data row10 col2" >integer</td>
     </tr>
   </tbody>
 </table>
@@ -2347,7 +2347,7 @@ Name: n_tratados_como_nan, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9a6f89b814d03c4b05eb3af7b6336de862bc64d60e8c987a0493c6e2f20308d.png" src="_images/b9a6f89b814d03c4b05eb3af7b6336de862bc64d60e8c987a0493c6e2f20308d.png" />
+<img alt="_images/e8a0325b1f1a276ed07c03b859a6267c153828be36da0221ecf752df4aad4a1d.png" src="_images/e8a0325b1f1a276ed07c03b859a6267c153828be36da0221ecf752df4aad4a1d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2389,15 +2389,10 @@ Name: n_tratados_como_nan, dtype: int64
 </ul>
 <p>De aquí para adelante: definir el tratamiento final del código especial 96/98 y de la anomalía de <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> (dummies, imputación o segmentación, según lo documentado en 3.4), y seleccionar variables para modelar el riesgo de morosidad grave.</p>
 </section>
-<section id="modelado-predictivo-regresion-logistica-con-regularizacion-ridge-y-lasso">
-<h2>8. Modelado predictivo: Regresión Logística con regularización (Ridge y Lasso)<a class="headerlink" href="#modelado-predictivo-regresion-logistica-con-regularizacion-ridge-y-lasso" title="Link to this heading">#</a></h2>
-<p>Esta sección construye modelos de clasificación para predecir <code class="docutils literal notranslate"><span class="pre">SeriousDlqin2yrs</span></code> a partir de las variables exploradas en las secciones anteriores. Se comparan tres variantes de regresión logística:</p>
-<ul class="simple">
-<li><p><strong>Logística base</strong>: sin búsqueda del hiperparámetro de regularización (<code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">1</span></code>, valor por defecto de scikit-learn).</p></li>
-<li><p><strong>Ridge (L2)</strong>: penalización proporcional a la suma de cuadrados de los coeficientes; el hiperparámetro <code class="docutils literal notranslate"><span class="pre">C</span></code> se selecciona por validación cruzada.</p></li>
-<li><p><strong>Lasso (L1)</strong>: penalización proporcional a la suma de valores absolutos de los coeficientes, capaz de llevar coeficientes exactamente a cero (selección de variables); <code class="docutils literal notranslate"><span class="pre">C</span></code> también se selecciona por validación cruzada.</p></li>
-</ul>
-<p>Como se señaló en la sección 3.5, la variable objetivo está fuertemente desbalanceada (93.32% / 6.68%), por lo que el <em>accuracy</em> debe interpretarse con cautela: un modelo que prediga siempre la clase mayoritaria ya alcanzaría un nivel de exactitud similar. Por eso, además del score y el error solicitados, se reportan métricas pensadas para clases desbalanceadas:</p>
+<section id="modelado-predictivo-regresion-logistica">
+<h2>8. Modelado predictivo: Regresión Logística<a class="headerlink" href="#modelado-predictivo-regresion-logistica" title="Link to this heading">#</a></h2>
+<p>Esta sección construye un modelo de clasificación para predecir <code class="docutils literal notranslate"><span class="pre">SeriousDlqin2yrs</span></code> a partir de las variables exploradas en las secciones anteriores, usando regresión logística — el modelo natural para un problema de clasificación binaria como este. scikit-learn aplica por defecto una penalización L2 moderada (<code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">1</span></code>), sin necesidad de buscar un hiperparámetro adicional.</p>
+<p>Como se señaló en la sección 3.5, la variable objetivo está fuertemente desbalanceada (93.32% / 6.68%), por lo que el <em>accuracy</em> debe interpretarse con cautela: un modelo que prediga siempre la clase mayoritaria ya alcanzaría un nivel de exactitud similar, y eso puede esconder un margen de mejora real que el accuracy por sí solo no muestra. Por eso, además del score y el error solicitados, se reportan métricas pensadas para clases desbalanceadas:</p>
 <ul class="simple">
 <li><p><strong>Score (accuracy)</strong>: proporción de predicciones correctas sobre el conjunto de prueba.</p></li>
 <li><p><strong>Error (log-loss)</strong>: pérdida logarítmica sobre las probabilidades predichas; penaliza la mala calibración y es más sensible que el accuracy en un contexto desbalanceado.</p></li>
@@ -2466,12 +2461,12 @@ Name: n_nulos_pendientes_de_imputar_con_mediana_de_train, dtype: int64
 </section>
 <section id="seleccion-de-variables-division-train-test-y-escalado">
 <h3>8.2 Selección de variables, división train/test y escalado<a class="headerlink" href="#seleccion-de-variables-division-train-test-y-escalado" title="Link to this heading">#</a></h3>
-<p>El conjunto de variables predictoras incluye las diez variables numéricas originales (con <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> reemplazada por <code class="docutils literal notranslate"><span class="pre">DebtRatio_log</span></code>) más las dos banderas creadas durante el EDA (<code class="docutils literal notranslate"><span class="pre">flag_codigo_especial_mora</span></code>, <code class="docutils literal notranslate"><span class="pre">ingreso_no_reportado</span></code>), que documentan un tratamiento de datos en vez de descartarse. La división es 80/20 estratificada por la variable objetivo. Tres pasos de preprocesamiento se ajustan <strong>únicamente con el conjunto de entrenamiento</strong> y luego se aplican al de prueba con esos mismos parámetros: la imputación por mediana de <code class="docutils literal notranslate"><span class="pre">MonthlyIncome</span></code>, <code class="docutils literal notranslate"><span class="pre">NumberOfDependents</span></code> y las tres variables de mora (dejada pendiente en la sección 8.1) y el escalado con <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>. Si cualquiera de estos se calculara sobre el dataset completo antes de dividir, el conjunto de prueba dejaría de ser una evaluación honesta del modelo, porque parte de su información habría influido en el preprocesamiento usado para entrenar. El escalado, además, es imprescindible para que la penalización L1/L2 trate a todas las variables en la misma escala — sin esto, variables de rango grande (<code class="docutils literal notranslate"><span class="pre">MonthlyIncome</span></code>) dominarían la penalización frente a variables de rango pequeño (<code class="docutils literal notranslate"><span class="pre">age</span></code>).</p>
+<p>El conjunto de variables predictoras incluye las diez variables numéricas originales (con <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> reemplazada por <code class="docutils literal notranslate"><span class="pre">DebtRatio_log</span></code>) más las dos banderas creadas durante el EDA (<code class="docutils literal notranslate"><span class="pre">flag_codigo_especial_mora</span></code>, <code class="docutils literal notranslate"><span class="pre">ingreso_no_reportado</span></code>), que documentan un tratamiento de datos en vez de descartarse. La división es 80/20 estratificada por la variable objetivo. Tanto la imputación por mediana de <code class="docutils literal notranslate"><span class="pre">MonthlyIncome</span></code>, <code class="docutils literal notranslate"><span class="pre">NumberOfDependents</span></code> y las tres variables de mora (dejada pendiente en la sección 8.1) como el escalado con <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> se ajustan <strong>únicamente con el conjunto de entrenamiento</strong> y luego se aplican al de prueba con esos mismos parámetros: si se calcularan sobre el dataset completo antes de dividir, el conjunto de prueba dejaría de ser una evaluación honesta del modelo. El escalado, además, es recomendable porque scikit-learn aplica una penalización L2 por defecto (<code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">1</span></code>): sin escalar, esa penalización trataría distinto a las variables de rango grande (<code class="docutils literal notranslate"><span class="pre">MonthlyIncome</span></code>) que a las de rango pequeño (<code class="docutils literal notranslate"><span class="pre">age</span></code>), y el optimizador basado en gradiente convergería más lento.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span><span class="p">,</span> <span class="n">LogisticRegressionCV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">log_loss</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span>
     <span class="n">classification_report</span><span class="p">,</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">roc_curve</span><span class="p">,</span>
@@ -2519,46 +2514,20 @@ Proporción de la clase 1 — train: 0.0668 | test: 0.0668
 </div>
 </div>
 </section>
-<section id="ajuste-de-los-modelos">
-<h3>8.3 Ajuste de los modelos<a class="headerlink" href="#ajuste-de-los-modelos" title="Link to this heading">#</a></h3>
-<p>El hiperparámetro <code class="docutils literal notranslate"><span class="pre">C</span></code> (inverso de la fuerza de regularización) de Ridge y Lasso se selecciona con <code class="docutils literal notranslate"><span class="pre">LogisticRegressionCV</span></code>, usando <code class="docutils literal notranslate"><span class="pre">scoring=&quot;neg_log_loss&quot;</span></code> para optimizar directamente la métrica de error, con validación cruzada de 5 particiones estratificadas sobre el conjunto de entrenamiento — el conjunto de prueba no participa en la selección de <code class="docutils literal notranslate"><span class="pre">C</span></code>, solo en la evaluación final.</p>
+<section id="ajuste-del-modelo">
+<h3>8.3 Ajuste del modelo<a class="headerlink" href="#ajuste-del-modelo" title="Link to this heading">#</a></h3>
+<p>Se entrena una regresión logística con los parámetros por defecto de scikit-learn (<code class="docutils literal notranslate"><span class="pre">C</span> <span class="pre">=</span> <span class="pre">1</span></code>, penalización L2), sin búsqueda de hiperparámetro — la opción más simple y directa para un problema de clasificación binaria como este.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
-
-<span class="n">modelos</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="c1"># Logística base (sin búsqueda de C): referencia sin regularización ajustada</span>
-<span class="n">log_base</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_base</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">log_base</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_esc</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">modelos</span><span class="p">[</span><span class="s2">"Logística base"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">log_base</span><span class="p">,</span> <span class="n">log_base</span><span class="o">.</span><span class="n">C</span><span class="p">)</span>
 
-<span class="c1"># Ridge (L2): penaliza la suma de cuadrados de los coeficientes</span>
-<span class="n">ridge_cv</span> <span class="o">=</span> <span class="n">LogisticRegressionCV</span><span class="p">(</span>
-    <span class="n">Cs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s2">"l2"</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">"lbfgs"</span><span class="p">,</span>
-    <span class="n">scoring</span><span class="o">=</span><span class="s2">"neg_log_loss"</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
-<span class="p">)</span>
-<span class="n">ridge_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_esc</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">modelos</span><span class="p">[</span><span class="s2">"Ridge (L2)"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">ridge_cv</span><span class="p">,</span> <span class="n">ridge_cv</span><span class="o">.</span><span class="n">C_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="c1"># Lasso (L1): penaliza la suma de valores absolutos, puede anular coeficientes</span>
-<span class="n">lasso_cv</span> <span class="o">=</span> <span class="n">LogisticRegressionCV</span><span class="p">(</span>
-    <span class="n">Cs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s2">"l1"</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">"liblinear"</span><span class="p">,</span>
-    <span class="n">scoring</span><span class="o">=</span><span class="s2">"neg_log_loss"</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
-<span class="p">)</span>
-<span class="n">lasso_cv</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_esc</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">modelos</span><span class="p">[</span><span class="s2">"Lasso (L1)"</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">lasso_cv</span><span class="p">,</span> <span class="n">lasso_cv</span><span class="o">.</span><span class="n">C_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">c_opt</span><span class="p">)</span> <span class="ow">in</span> <span class="n">modelos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">: C óptimo = </span><span class="si">{</span><span class="n">c_opt</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Modelo ajustado: Regresión Logística (C = </span><span class="si">{</span><span class="n">log_base</span><span class="o">.</span><span class="n">C</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Logística base: C óptimo = 1.0000
-Ridge (L2): C óptimo = 0.0464
-Lasso (L1): C óptimo = 0.3594
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modelo ajustado: Regresión Logística (C = 1.0)
 </pre></div>
 </div>
 </div>
@@ -2568,22 +2537,22 @@ Lasso (L1): C óptimo = 0.3594
 <h3>8.4 Evaluación: score, error y AUC-ROC<a class="headerlink" href="#evaluacion-score-error-y-auc-roc" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filas_modelos</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">nombre</span><span class="p">,</span> <span class="p">(</span><span class="n">modelo</span><span class="p">,</span> <span class="n">c_opt</span><span class="p">)</span> <span class="ow">in</span> <span class="n">modelos</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_esc</span><span class="p">)</span>
-    <span class="n">y_proba</span> <span class="o">=</span> <span class="n">modelo</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_esc</span><span class="p">)</span>
-    <span class="n">filas_modelos</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
-        <span class="s2">"modelo"</span><span class="p">:</span> <span class="n">nombre</span><span class="p">,</span>
-        <span class="s2">"C_optimo"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">c_opt</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
-        <span class="s2">"accuracy (score)"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> <span class="mi">4</span><span class="p">),</span>
-        <span class="s2">"log_loss (error)"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">log_loss</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba</span><span class="p">),</span> <span class="mi">4</span><span class="p">),</span>
-        <span class="s2">"roc_auc"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]),</span> <span class="mi">4</span><span class="p">),</span>
-    <span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">log_base</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_esc</span><span class="p">)</span>
+<span class="n">y_proba</span> <span class="o">=</span> <span class="n">log_base</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_esc</span><span class="p">)</span>
 
-<span class="n">resultados_modelos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">filas_modelos</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">logloss</span> <span class="o">=</span> <span class="n">log_loss</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba</span><span class="p">)</span>
+<span class="n">auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">baseline_ingenuo</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">y_test</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="mi">4</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Referencia — predecir siempre la clase mayoritaria: accuracy = </span><span class="si">{</span><span class="n">baseline_ingenuo</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">resultados_modelos</span>
+<span class="n">resultados_modelo</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span>
+    <span class="s2">"modelo"</span><span class="p">:</span> <span class="s2">"Regresión Logística"</span><span class="p">,</span>
+    <span class="s2">"accuracy (score)"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="s2">"log_loss (error)"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">logloss</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="s2">"roc_auc"</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">auc</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="p">}])</span>
+<span class="n">resultados_modelo</span>
 </pre></div>
 </div>
 </div>
@@ -2610,7 +2579,6 @@ Lasso (L1): C óptimo = 0.3594
     <tr style="text-align: right;">
       <th></th>
       <th>modelo</th>
-      <th>C_optimo</th>
       <th>accuracy (score)</th>
       <th>log_loss (error)</th>
       <th>roc_auc</th>
@@ -2619,223 +2587,62 @@ Lasso (L1): C óptimo = 0.3594
   <tbody>
     <tr>
       <th>0</th>
-      <td>Logística base</td>
-      <td>1.0000</td>
+      <td>Regresión Logística</td>
       <td>0.936</td>
       <td>0.1984</td>
       <td>0.8212</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Ridge (L2)</td>
-      <td>0.0464</td>
-      <td>0.936</td>
-      <td>0.1985</td>
-      <td>0.8212</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lasso (L1)</td>
-      <td>0.3594</td>
-      <td>0.936</td>
-      <td>0.1984</td>
-      <td>0.8213</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">resultados_modelos</span><span class="p">[</span><span class="s2">"modelo"</span><span class="p">],</span> <span class="n">resultados_modelos</span><span class="p">[</span><span class="s2">"accuracy (score)"</span><span class="p">],</span>
-            <span class="n">color</span><span class="o">=</span><span class="n">COLOR_SEQ</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">baseline_ingenuo</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLOR_CRITICAL</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span>
-                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Baseline ingenuo (</span><span class="si">{</span><span class="n">baseline_ingenuo</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
-<span class="n">style_ax</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Accuracy (score)"</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"Accuracy"</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">resultados_modelos</span><span class="p">[</span><span class="s2">"modelo"</span><span class="p">],</span> <span class="n">resultados_modelos</span><span class="p">[</span><span class="s2">"log_loss (error)"</span><span class="p">],</span>
-            <span class="n">color</span><span class="o">=</span><span class="n">COLOR_SEQ_DARK</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">style_ax</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Log-loss (error)"</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"Log-loss"</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">resultados_modelos</span><span class="p">[</span><span class="s2">"modelo"</span><span class="p">],</span> <span class="n">resultados_modelos</span><span class="p">[</span><span class="s2">"roc_auc"</span><span class="p">],</span>
-            <span class="n">color</span><span class="o">=</span><span class="n">COLOR_GOOD</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span>
-<span class="n">style_ax</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">"AUC-ROC"</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"AUC"</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"x"</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/c18228f3a9b7fb7c44bcb5e0e1f3b8ae821c0bf649ecb96a663ab9fa934f189c.png" src="_images/c18228f3a9b7fb7c44bcb5e0e1f3b8ae821c0bf649ecb96a663ab9fa934f189c.png" />
-</div>
-</div>
-<p>Los tres modelos logísticos obtienen un desempeño prácticamente idéntico: <strong>accuracy ≈ 93.6%</strong>, <strong>log-loss ≈ 0.198</strong> y <strong>AUC-ROC ≈ 0.821</strong>, con <code class="docutils literal notranslate"><span class="pre">C</span></code> óptimo de 0.0464 (Ridge) y 0.3594 (Lasso) — la regularización apenas mueve el resultado frente a la logística base, lo esperable con ~150,000 observaciones y solo 12 variables, donde el riesgo de sobreajuste es bajo y la penalización tiene poco margen para mejorar la generalización.</p>
-<p>El <em>accuracy</em> (93.6%) es apenas superior al baseline ingenuo de predecir siempre “sin morosidad” (93.32%), lo cual confirma la advertencia de la sección 3.5: con clases tan desbalanceadas, el accuracy por sí solo dice poco sobre la capacidad real del modelo. El <strong>AUC-ROC (0.821)</strong> es la métrica que revela lo que el accuracy oculta: bien por encima de 0.5 (un clasificador aleatorio), muestra que el modelo sí separa razonablemente bien ambas clases en términos de las probabilidades que asigna, con independencia del umbral de decisión que se use para convertir esa probabilidad en una predicción binaria.</p>
+<p>El modelo obtiene <strong>accuracy ≈ 93.6%</strong>, <strong>log-loss ≈ 0.198</strong> y <strong>AUC-ROC ≈ 0.821</strong>. A primera vista, el accuracy parece un resultado ya muy bueno — pero es apenas superior al baseline ingenuo de predecir siempre “sin morosidad” (93.32%), una diferencia de menos de tres décimas de punto porcentual. Esto confirma la advertencia de la sección 3.5: con un desbalance de clases tan marcado, el accuracy por sí solo no revela el margen de mejora real del modelo.</p>
+<p>El <strong>log-loss (0.198)</strong> y, sobre todo, el <strong>AUC-ROC (0.821)</strong> sí lo revelan: el AUC muestra que el modelo tiene una capacidad de discriminación bien por encima de la de un clasificador aleatorio (AUC = 0.5), es decir, sí existe señal aprovechable en los datos — pero, como se ve más abajo en la matriz de confusión y el reporte de clasificación, esa señal todavía no se traduce en una buena tasa de detección de los clientes en riesgo real. Ahí está el margen de mejora claro que el accuracy, tomado solo, esconde.</p>
 </section>
-<section id="coeficientes-efecto-de-la-regularizacion">
-<h3>8.5 Coeficientes: efecto de la regularización<a class="headerlink" href="#coeficientes-efecto-de-la-regularizacion" title="Link to this heading">#</a></h3>
+<section id="coeficientes-del-modelo">
+<h3>8.5 Coeficientes del modelo<a class="headerlink" href="#coeficientes-del-modelo" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coef_comparacion</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-    <span class="s2">"variable"</span><span class="p">:</span> <span class="n">features</span><span class="p">,</span>
-    <span class="s2">"Logística base"</span><span class="p">:</span> <span class="n">log_base</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-    <span class="s2">"Ridge (L2)"</span><span class="p">:</span> <span class="n">ridge_cv</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-    <span class="s2">"Lasso (L1)"</span><span class="p">:</span> <span class="n">lasso_cv</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-<span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">"variable"</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="n">coef_comparacion</span><span class="p">[</span><span class="s2">"Lasso == 0"</span><span class="p">]</span> <span class="o">=</span> <span class="n">coef_comparacion</span><span class="p">[</span><span class="s2">"Lasso (L1)"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
-<span class="n">coef_comparacion</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">"Logística base"</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coeficientes</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">log_base</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">features</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"coeficiente"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">coeficientes</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Logística base</th>
-      <th>Ridge (L2)</th>
-      <th>Lasso (L1)</th>
-      <th>Lasso == 0</th>
-    </tr>
-    <tr>
-      <th>variable</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>NumberOfTimes90DaysLate</th>
-      <td>0.4225</td>
-      <td>0.4220</td>
-      <td>0.4224</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>NumberOfTime30-59DaysPastDueNotWorse</th>
-      <td>0.3903</td>
-      <td>0.3899</td>
-      <td>0.3903</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>age</th>
-      <td>-0.3864</td>
-      <td>-0.3877</td>
-      <td>-0.3875</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>MonthlyIncome</th>
-      <td>-0.3245</td>
-      <td>-0.3086</td>
-      <td>-0.3134</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>NumberOfTime60-89DaysPastDueNotWorse</th>
-      <td>0.2562</td>
-      <td>0.2567</td>
-      <td>0.2563</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>flag_codigo_especial_mora</th>
-      <td>0.1238</td>
-      <td>0.1237</td>
-      <td>0.1234</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>DebtRatio_log</th>
-      <td>-0.1086</td>
-      <td>-0.1129</td>
-      <td>-0.1171</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>NumberRealEstateLoansOrLines</th>
-      <td>0.1082</td>
-      <td>0.1065</td>
-      <td>0.1068</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>NumberOfDependents</th>
-      <td>0.0673</td>
-      <td>0.0667</td>
-      <td>0.0667</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>ingreso_no_reportado</th>
-      <td>0.0666</td>
-      <td>0.0722</td>
-      <td>0.0761</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>NumberOfOpenCreditLinesAndLoans</th>
-      <td>-0.0209</td>
-      <td>-0.0201</td>
-      <td>-0.0192</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>RevolvingUtilizationOfUnsecuredLines</th>
-      <td>0.0026</td>
-      <td>0.0024</td>
-      <td>0.0023</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NumberOfTimes90DaysLate                 0.4225
+NumberOfTime30-59DaysPastDueNotWorse    0.3903
+age                                    -0.3864
+MonthlyIncome                          -0.3245
+NumberOfTime60-89DaysPastDueNotWorse    0.2562
+flag_codigo_especial_mora               0.1238
+DebtRatio_log                          -0.1086
+NumberRealEstateLoansOrLines            0.1082
+NumberOfDependents                      0.0673
+ingreso_no_reportado                    0.0666
+NumberOfOpenCreditLinesAndLoans        -0.0209
+RevolvingUtilizationOfUnsecuredLines    0.0026
+Name: coeficiente, dtype: float64
+</pre></div>
 </div>
-<p>Con <code class="docutils literal notranslate"><span class="pre">C</span></code> óptimo ≈ 0.36 en Lasso (una regularización moderada, no extrema), ninguna de las 12 variables es llevada a cero: todas aportan señal suficiente como para que ni siquiera la penalización L1 las descarte por completo. La mayoría de los signos es consistente con la intuición de negocio y con los hallazgos de las secciones 4 y 5: las tres variables de atrasos históricos, <code class="docutils literal notranslate"><span class="pre">flag_codigo_especial_mora</span></code> y <code class="docutils literal notranslate"><span class="pre">NumberRealEstateLoansOrLines</span></code> tienen coeficiente positivo (más atrasos, código especial de mora o líneas hipotecarias → mayor riesgo), mientras que <code class="docutils literal notranslate"><span class="pre">age</span></code> y <code class="docutils literal notranslate"><span class="pre">MonthlyIncome</span></code> tienen coeficiente negativo (clientes de mayor edad e ingreso son menos riesgosos).</p>
+</div>
+</div>
+<p>La mayoría de los signos es consistente con la intuición de negocio y con los hallazgos de las secciones 4 y 5: las tres variables de atrasos históricos, <code class="docutils literal notranslate"><span class="pre">flag_codigo_especial_mora</span></code> y <code class="docutils literal notranslate"><span class="pre">NumberRealEstateLoansOrLines</span></code> tienen coeficiente positivo (más atrasos, código especial de mora o líneas hipotecarias → mayor riesgo), mientras que <code class="docutils literal notranslate"><span class="pre">age</span></code> y <code class="docutils literal notranslate"><span class="pre">MonthlyIncome</span></code> tienen coeficiente negativo (clientes de mayor edad e ingreso son menos riesgosos).</p>
 <p>Dos variables se salen de esa lectura simple y quedan como candidatas para una siguiente iteración:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">DebtRatio_log</span></code></strong> tiene coeficiente negativo (-0.11), en el sentido contrario al esperado (más deuda relativa al ingreso debería asociarse a más riesgo, no a menos). Es plausible que, incluso después de aplicar <code class="docutils literal notranslate"><span class="pre">log1p</span></code> y de controlar por <code class="docutils literal notranslate"><span class="pre">ingreso_no_reportado</span></code>, la mezcla de poblaciones documentada en la anomalía de <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> (razón real vs. cifra de deuda absoluta) siga distorsionando parcialmente su relación lineal con el riesgo — el tratamiento aplicado aquí atenúa el problema de escala para <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>, pero no separa por completo ambas poblaciones.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">DebtRatio_log</span></code></strong> tiene coeficiente negativo (-0.11), en el sentido contrario al esperado (más deuda relativa al ingreso debería asociarse a más riesgo, no a menos). Es plausible que, incluso después de aplicar <code class="docutils literal notranslate"><span class="pre">log1p</span></code> y de controlar por <code class="docutils literal notranslate"><span class="pre">ingreso_no_reportado</span></code>, la mezcla de poblaciones documentada en la anomalía de <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> (razón real vs. cifra de deuda absoluta) siga distorsionando parcialmente su relación lineal con el riesgo.</p></li>
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">RevolvingUtilizationOfUnsecuredLines</span></code></strong> tiene un coeficiente prácticamente nulo (0.0026) a pesar de mostrar uno de los tamaños de efecto más grandes en la comparación de grupos de la sección 5. La explicación más probable es la misma que motivó transformar <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code>: esta variable también tiene atípicos severos (secciones 3.2–3.3) que dominan su varianza bajo <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>, diluyendo su efecto lineal. Aplicarle una transformación similar (<code class="docutils literal notranslate"><span class="pre">log1p</span></code> o winsorización) es un candidato natural para la siguiente iteración del modelo.</p></li>
 </ul>
 </section>
-<section id="matriz-de-confusion-reporte-de-clasificacion-y-curva-roc-del-mejor-modelo">
-<h3>8.6 Matriz de confusión, reporte de clasificación y curva ROC del mejor modelo<a class="headerlink" href="#matriz-de-confusion-reporte-de-clasificacion-y-curva-roc-del-mejor-modelo" title="Link to this heading">#</a></h3>
+<section id="matriz-de-confusion-reporte-de-clasificacion-y-curva-roc">
+<h3>8.6 Matriz de confusión, reporte de clasificación y curva ROC<a class="headerlink" href="#matriz-de-confusion-reporte-de-clasificacion-y-curva-roc" title="Link to this heading">#</a></h3>
 <p>El <em>accuracy</em> y el AUC-ROC resumen el desempeño global, pero ocultan cómo se distribuyen los errores entre clases. La matriz de confusión y el <code class="docutils literal notranslate"><span class="pre">classification_report</span></code> (precision, recall y F1 por clase) permiten cuantificar, en concreto, qué tan bien identifica el modelo a los clientes en riesgo — la clase minoritaria y la que más importa para el negocio.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mejor_nombre</span> <span class="o">=</span> <span class="n">resultados_modelos</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">resultados_modelos</span><span class="p">[</span><span class="s2">"log_loss (error)"</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">(),</span> <span class="s2">"modelo"</span><span class="p">]</span>
-<span class="n">mejor_modelo</span> <span class="o">=</span> <span class="n">modelos</span><span class="p">[</span><span class="n">mejor_nombre</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">y_pred_mejor</span> <span class="o">=</span> <span class="n">mejor_modelo</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_esc</span><span class="p">)</span>
-<span class="n">y_proba_mejor</span> <span class="o">=</span> <span class="n">mejor_modelo</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test_esc</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
-
-<span class="n">matriz</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mejor</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
 <span class="n">cmap_confusion</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">blend_palette</span><span class="p">([</span><span class="s2">"#fcfcfb"</span><span class="p">,</span> <span class="n">COLOR_SEQ_DARK</span><span class="p">],</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
@@ -2843,20 +2650,20 @@ Lasso (L1): C óptimo = 0.3594
             <span class="n">linewidths</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linecolor</span><span class="o">=</span><span class="s2">"#fcfcfb"</span><span class="p">,</span> <span class="n">annot_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">"fontsize"</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s2">"color"</span><span class="p">:</span> <span class="n">PRIMARY_TEXT</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s2">"Predicho: 0"</span><span class="p">,</span> <span class="s2">"Predicho: 1"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">MUTED_TEXT</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="s2">"Real: 0"</span><span class="p">,</span> <span class="s2">"Real: 1"</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">MUTED_TEXT</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Matriz de confusión — </span><span class="si">{</span><span class="n">mejor_nombre</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">PRIMARY_TEXT</span><span class="p">,</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Matriz de confusión — Regresión Logística"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">PRIMARY_TEXT</span><span class="p">,</span>
              <span class="n">fontweight</span><span class="o">=</span><span class="s2">"bold"</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Reporte de clasificación — </span><span class="si">{</span><span class="n">mejor_nombre</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_mejor</span><span class="p">,</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Reporte de clasificación — Regresión Logística</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span>
                              <span class="n">target_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"Sin morosidad (0)"</span><span class="p">,</span> <span class="s2">"Con morosidad (1)"</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e8827fff500e08507c28fe1d06f4c01601e8ee4a300d5e3a63675105baef32f9.png" src="_images/e8827fff500e08507c28fe1d06f4c01601e8ee4a300d5e3a63675105baef32f9.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reporte de clasificación — Logística base
+<img alt="_images/30c3a34cfdc7f1abad93f2c5caa2cad6801897ef39f7a6a7cedee5fa779decf8.png" src="_images/30c3a34cfdc7f1abad93f2c5caa2cad6801897ef39f7a6a7cedee5fa779decf8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reporte de clasificación — Regresión Logística
 
                    precision    recall  f1-score   support
 
@@ -2872,13 +2679,12 @@ Con morosidad (1)       0.58      0.16      0.25      2005
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba_mejor</span><span class="p">)</span>
-<span class="n">auc_mejor</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba_mejor</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_proba</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLOR_SEQ_DARK</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mejor_nombre</span><span class="si">}</span><span class="s2"> (AUC = </span><span class="si">{</span><span class="n">auc_mejor</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">COLOR_SEQ_DARK</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Regresión Logística (AUC = </span><span class="si">{</span><span class="n">auc</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">MUTED_TEXT</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">"--"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">"Modelo aleatorio (AUC = 0.5)"</span><span class="p">)</span>
-<span class="n">style_ax</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Curva ROC — </span><span class="si">{</span><span class="n">mejor_nombre</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">"Tasa de falsos positivos"</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"Tasa de verdaderos positivos"</span><span class="p">)</span>
+<span class="n">style_ax</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Curva ROC — Regresión Logística"</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">"Tasa de falsos positivos"</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"Tasa de verdaderos positivos"</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -2886,20 +2692,19 @@ Con morosidad (1)       0.58      0.16      0.25      2005
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4770208b40026fb0324ac13cb6361387e01a81a40ba10befef6596b645c0e6b2.png" src="_images/4770208b40026fb0324ac13cb6361387e01a81a40ba10befef6596b645c0e6b2.png" />
+<img alt="_images/80033738ecb8281d682d7a582da1b9c1cfc428aec8acf7eaba6c8f632d750fae.png" src="_images/80033738ecb8281d682d7a582da1b9c1cfc428aec8acf7eaba6c8f632d750fae.png" />
 </div>
 </div>
-<p>La matriz de confusión y el reporte de clasificación de la logística base — el modelo con menor log-loss — cuantifican exactamente la limitación que el accuracy ocultaba: de los 2,005 clientes con morosidad grave en el conjunto de prueba, el modelo identifica correctamente solo <strong>317 (recall = 16%)</strong> y pasa por alto <strong>1,688</strong>; de los 27,995 clientes sin morosidad, identifica correctamente 27,763 (recall = 99%). Cuando el modelo sí predice riesgo, acierta el 58% de las veces (precisión de la clase 1), pero eso ocurre con muy poca frecuencia dado el recall bajo — el F1 de la clase 1 queda en 0.25, frente a 0.97 de la clase 0.</p>
-<p>Esto es consistente con no aplicar ponderación de clases (<code class="docutils literal notranslate"><span class="pre">class_weight</span></code>) ni ajustar el umbral de decisión: por defecto, <code class="docutils literal notranslate"><span class="pre">predict()</span></code> usa un umbral de 0.5, que en un dataset con 93.3% de la clase mayoritaria favorece sistemáticamente esa clase. El <strong>AUC-ROC de 0.821</strong>, en cambio, evalúa el modelo a través de todos los umbrales posibles y muestra que las probabilidades predichas sí ordenan razonablemente bien a los clientes por riesgo — la brecha entre un AUC decente y un recall bajo no es falta de señal, es el efecto del umbral por defecto sobre un problema desbalanceado. Ese ajuste (ponderación de clases, remuestreo o un umbral distinto de 0.5) queda fuera del alcance de esta sección, pero es la siguiente mejora natural del proyecto.</p>
+<p>La matriz de confusión y el reporte de clasificación cuantifican exactamente el margen de mejora que el accuracy y el AUC-ROC dejaban entrever: de los 2,005 clientes con morosidad grave en el conjunto de prueba, el modelo identifica correctamente solo <strong>317 (recall = 16%)</strong> y pasa por alto <strong>1,688</strong>; de los 27,995 clientes sin morosidad, identifica correctamente 27,763 (recall = 99%). Cuando el modelo sí predice riesgo, acierta el 58% de las veces (precisión de la clase 1), pero eso ocurre con muy poca frecuencia dado el recall bajo — el F1 de la clase 1 queda en 0.25, frente a 0.97 de la clase 0.</p>
+<p>Esto es consistente con no aplicar ponderación de clases (<code class="docutils literal notranslate"><span class="pre">class_weight</span></code>) ni ajustar el umbral de decisión: por defecto, <code class="docutils literal notranslate"><span class="pre">predict()</span></code> usa un umbral de 0.5, que en un dataset con 93.3% de la clase mayoritaria favorece sistemáticamente esa clase. El <strong>AUC-ROC de 0.821</strong>, en cambio, evalúa el modelo a través de todos los umbrales posibles y muestra que las probabilidades predichas sí ordenan razonablemente bien a los clientes por riesgo — la brecha entre un AUC decente y un recall bajo no es falta de señal, es el efecto del umbral por defecto sobre un problema desbalanceado, y es precisamente el margen de mejora claro que un accuracy del 93.6% no deja ver por sí solo.</p>
 </section>
 <section id="id1">
 <h3>8.7 Síntesis<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Los tres modelos logísticos (base, Ridge, Lasso) obtienen un desempeño casi idéntico: <strong>accuracy ≈ 93.6%</strong>, <strong>log-loss ≈ 0.198</strong> y <strong>AUC-ROC ≈ 0.821</strong>, con <code class="docutils literal notranslate"><span class="pre">C</span></code> óptimo de 0.0464 (Ridge) y 0.3594 (Lasso) — una regularización moderada que apenas cambia el resultado frente a la logística sin ajustar.</p></li>
-<li><p>El accuracy es apenas superior al baseline ingenuo (93.6% vs. 93.32%), reflejo directo del desbalance de clases documentado en la sección 3.5; el AUC-ROC (0.821) es la métrica más informativa de las evaluadas para este dataset, porque no depende de un umbral de decisión concreto.</p></li>
-<li><p>Ninguna variable fue descartada por Lasso: las 12 variables de entrada (10 numéricas más las banderas <code class="docutils literal notranslate"><span class="pre">flag_codigo_especial_mora</span></code> e <code class="docutils literal notranslate"><span class="pre">ingreso_no_reportado</span></code>) aportan señal. La mayoría de los signos es coherente con el análisis exploratorio, salvo <code class="docutils literal notranslate"><span class="pre">DebtRatio_log</span></code> y <code class="docutils literal notranslate"><span class="pre">RevolvingUtilizationOfUnsecuredLines</span></code>, cuyos coeficientes resultan más débiles o contraintuitivos de lo esperado — ambas comparten el mismo tipo de problema (atípicos severos bajo <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>) y son el primer candidato de mejora.</p></li>
-<li><p>La matriz de confusión y el <code class="docutils literal notranslate"><span class="pre">classification_report</span></code> cuantifican lo que la sección de matriz de confusión anticipaba de forma cualitativa: el modelo captura solo el 16% de los clientes en riesgo real (recall de la clase 1), aunque el AUC-ROC (0.821) muestra que sí existe señal suficiente para ordenar el riesgo — la brecha es el umbral de decisión por defecto en un problema desbalanceado, no ausencia de información.</p></li>
-<li><p>Esta sección retoma explícitamente dos tratamientos que la sección 3.4 y la anomalía de <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> habían dejado pendientes para el modelado: los códigos especiales 96/98 se imputan con la mediana conservando <code class="docutils literal notranslate"><span class="pre">flag_codigo_especial_mora</span></code> (en vez de eliminar filas), y <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> se transforma con <code class="docutils literal notranslate"><span class="pre">log1p</span></code> antes de escalar (en vez de usar <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> directamente sobre la variable sin tratar).</p></li>
+<li><p>El modelo de regresión logística obtiene <strong>accuracy ≈ 93.6%</strong>, <strong>log-loss ≈ 0.198</strong> y <strong>AUC-ROC ≈ 0.821</strong> sobre el conjunto de prueba.</p></li>
+<li><p>El accuracy es apenas superior al baseline ingenuo (93.6% vs. 93.32%), reflejo directo del desbalance de clases documentado en la sección 3.5 — un accuracy que a primera vista parece muy bueno, pero que esconde un margen de mejora real. El AUC-ROC y, sobre todo, la matriz de confusión y el <code class="docutils literal notranslate"><span class="pre">classification_report</span></code> lo dejan ver con claridad: el modelo captura solo el 16% de los clientes en riesgo real (recall de la clase 1), aunque el AUC (0.821) muestra que sí existe señal suficiente para ordenar el riesgo — la brecha es el umbral de decisión por defecto en un problema desbalanceado, no ausencia de información.</p></li>
+<li><p>Los signos de los coeficientes son coherentes con el análisis exploratorio para la mayoría de las variables (atrasos históricos, código especial de mora y líneas hipotecarias con signo positivo; edad e ingreso con signo negativo), salvo <code class="docutils literal notranslate"><span class="pre">DebtRatio_log</span></code> y <code class="docutils literal notranslate"><span class="pre">RevolvingUtilizationOfUnsecuredLines</span></code>, cuyos coeficientes resultan más débiles o contraintuitivos de lo esperado — ambas comparten el mismo tipo de problema (atípicos severos bajo <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>) y son el primer candidato de mejora.</p></li>
+<li><p>Esta sección retoma explícitamente los tratamientos que la sección 3.4, la anomalía de <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> y la sección 2.3 habían dejado pendientes para el modelado: los códigos especiales 96/98, <code class="docutils literal notranslate"><span class="pre">MonthlyIncome</span></code> y <code class="docutils literal notranslate"><span class="pre">NumberOfDependents</span></code> se imputan con la mediana del conjunto de entrenamiento (no del dataset completo), y <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> se transforma con <code class="docutils literal notranslate"><span class="pre">log1p</span></code> antes de escalar.</p></li>
 <li><p>Próximos pasos naturales: cerrar la brecha de recall en la clase minoritaria (<code class="docutils literal notranslate"><span class="pre">class_weight=&quot;balanced&quot;</span></code>, remuestreo o ajuste de umbral usando la curva ROC) y aplicar a <code class="docutils literal notranslate"><span class="pre">RevolvingUtilizationOfUnsecuredLines</span></code> una transformación similar a la de <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code>.</p></li>
 </ul>
 </section>
@@ -2994,13 +2799,13 @@ Con morosidad (1)       0.58      0.16      0.25      2005
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-general">7. Conclusión general</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-predictivo-regresion-logistica-con-regularizacion-ridge-y-lasso">8. Modelado predictivo: Regresión Logística con regularización (Ridge y Lasso)</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-predictivo-regresion-logistica">8. Modelado predictivo: Regresión Logística</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparacion-de-los-datos">8.1 Preparación de los datos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-variables-division-train-test-y-escalado">8.2 Selección de variables, división train/test y escalado</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-de-los-modelos">8.3 Ajuste de los modelos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ajuste-del-modelo">8.3 Ajuste del modelo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluacion-score-error-y-auc-roc">8.4 Evaluación: score, error y AUC-ROC</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-efecto-de-la-regularizacion">8.5 Coeficientes: efecto de la regularización</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion-reporte-de-clasificacion-y-curva-roc-del-mejor-modelo">8.6 Matriz de confusión, reporte de clasificación y curva ROC del mejor modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficientes-del-modelo">8.5 Coeficientes del modelo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-de-confusion-reporte-de-clasificacion-y-curva-roc">8.6 Matriz de confusión, reporte de clasificación y curva ROC</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.7 Síntesis</a></li>
 </ul>
 </li>
