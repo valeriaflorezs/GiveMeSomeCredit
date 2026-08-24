@@ -9,3 +9,4 @@ root: intro
 chapters:
   - file: paper
   - file: analisis_exploratorio
+  - file: Tarea1

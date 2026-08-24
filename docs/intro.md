@@ -24,6 +24,7 @@ Con esa base se entrenó un primer modelo de clasificación (regresión logísti
 
 - 📄 **[Reporte de avance (PDF)](paper.md)** — el documento formal de la Fase 1, con formato de artículo científico (plantilla Springer Nature).
 - 📓 **[Análisis Exploratorio de Datos y Modelado](analisis_exploratorio.ipynb)** — el notebook completo e interactivo con todo el código, las visualizaciones, el modelo de regresión logística y las decisiones documentadas paso a paso.
+- 📓 **[Tarea 1 — Lending Club](Tarea1.ipynb)** — ejercicio del curso sobre otro dataset de riesgo crediticio (Lending Club), con EDA, preprocesamiento y modelado comparado en scikit-learn y PySpark; incluye un caso real de detección de fuga de datos (`loan_status` filtrado por error entre las variables predictoras).
 
 ## Enlaces
 
