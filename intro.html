@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,6 +60,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -217,6 +219,7 @@
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="paper.html">Reporte de avance (Fase 1) — PDF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analisis_exploratorio.html">Análisis Exploratorio de Datos (EDA) — Give Me Some Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tarea1.html">Proyecto Integrador de Aprendizaje Automático</a></li>
 </ul>
 
     </div>
@@ -430,20 +433,22 @@ Departamento de Matemáticas, Física y Ciencia de Datos, Universidad del Norte,
 <code class="docutils literal notranslate"><span class="pre">florezvaleria&#64;uninorte.edu.co</span></code> · <code class="docutils literal notranslate"><span class="pre">lkatherin&#64;uninorte.edu.co</span></code></p>
 <div class="tip admonition">
 <p class="admonition-title">Estado del proyecto</p>
-<p><strong>Fase 1 completada:</strong> ETL y Análisis Exploratorio de Datos (EDA).
-<strong>Próximas fases:</strong> tratamiento definitivo de anomalías, selección y entrenamiento de modelos de clasificación, y evaluación comparativa frente a los modelos vistos en el curso.</p>
+<p><strong>Completado:</strong> ETL, Análisis Exploratorio de Datos (EDA) y un primer modelo de clasificación (regresión logística), con evaluación en un conjunto de prueba separado desde antes de imputar o escalar.
+<strong>Próximos pasos:</strong> cerrar la brecha de recall en la clase minoritaria (ponderación de clases, remuestreo o ajuste de umbral) y aplicar a <code class="docutils literal notranslate"><span class="pre">RevolvingUtilizationOfUnsecuredLines</span></code> una transformación de escala similar a la usada en <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code>.</p>
 </div>
 <section id="resumen">
 <h2>Resumen<a class="headerlink" href="#resumen" title="Link to this heading">#</a></h2>
 <p>Este documento presenta la primera fase de un proyecto de clasificación de riesgo crediticio, desarrollado sobre el conjunto de datos público <strong>Give Me Some Credit</strong> (Kaggle), compuesto por 150,000 instancias y 11 variables financieras y de comportamiento de los clientes. En esta etapa se realiza el proceso de <em>Extract-Transform-Load</em> (ETL) y un Análisis Exploratorio de Datos (EDA) exhaustivo, con el fin de comprender la estructura del conjunto de datos, identificar valores atípicos y faltantes, y sentar las bases para las decisiones de preprocesamiento y modelamiento.</p>
-<p>Tras la limpieza (imputación por mediana de dos variables con datos faltantes y eliminación de un registro con edad inválida), el dataset quedó con 149,999 filas sin valores nulos. El EDA reveló un fuerte desbalance de clases en la variable objetivo (93.32% sin morosidad grave frente a 6.68% con morosidad grave), asimetría positiva marcada en la mayoría de las variables numéricas, un código de valor especial (96/98) en las tres variables de conteo de atrasos que no representa un conteo real, y una anomalía en <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> explicada por su cruce con los registros de ingreso no reportado. Dado el tamaño muestral (N ≈ 150,000), se evitaron pruebas formales de normalidad por exceso de potencia estadística, optando en su lugar por diagnósticos descriptivos de forma y por la prueba de Mann–Whitney U con tamaño de efecto corregido por empates (r de Rosenthal) y AUC univariado, aplicada uniformemente a ocho variables numéricas frente a la variable objetivo. El desarrollo del modelo predictivo, su evaluación y los resultados finales se abordarán y documentarán en las siguientes etapas del proyecto.</p>
+<p>Tras la limpieza (imputación por mediana de dos variables con datos faltantes y eliminación de un registro con edad inválida), el dataset quedó con 149,999 filas sin valores nulos. El EDA reveló un fuerte desbalance de clases en la variable objetivo (93.32% sin morosidad grave frente a 6.68% con morosidad grave), asimetría positiva marcada en la mayoría de las variables numéricas, un código de valor especial (96/98) en las tres variables de conteo de atrasos que no representa un conteo real, y una anomalía en <code class="docutils literal notranslate"><span class="pre">DebtRatio</span></code> explicada por su cruce con los registros de ingreso no reportado. Dado el tamaño muestral (N ≈ 150,000), se evitaron pruebas formales de normalidad por exceso de potencia estadística, optando en su lugar por diagnósticos descriptivos de forma y por la prueba de Mann–Whitney U con tamaño de efecto corregido por empates (r de Rosenthal) y AUC univariado, aplicada uniformemente a ocho variables numéricas frente a la variable objetivo.</p>
+<p>Con esa base se entrenó un primer modelo de clasificación (regresión logística), dividiendo el conjunto en entrenamiento y prueba antes de imputar los valores faltantes restantes y de ajustar el escalador, para evitar fuga de información del conjunto de prueba. El modelo obtiene accuracy ≈ 93.6% y AUC-ROC ≈ 0.821, pero un recall de apenas 16% sobre los clientes que sí presentan morosidad grave — evidencia de que el umbral de decisión por defecto, en un problema tan desbalanceado, no aprovecha toda la capacidad de discriminación del modelo. El notebook documenta este margen de mejora y los próximos pasos para cerrarlo.</p>
 <p><strong>Palabras clave:</strong> riesgo crediticio, clasificación binaria, análisis exploratorio de datos, valores atípicos, desbalance de clases.</p>
 </section>
 <section id="contenido-de-este-libro">
 <h2>Contenido de este libro<a class="headerlink" href="#contenido-de-este-libro" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>📄 <strong><a class="reference internal" href="paper.html"><span class="std std-doc">Reporte de avance (PDF)</span></a></strong> — el documento formal de la Fase 1, con formato de artículo científico (plantilla Springer Nature).</p></li>
-<li><p>📓 <strong><a class="reference internal" href="analisis_exploratorio.html"><span class="std std-doc">Análisis Exploratorio de Datos</span></a></strong> — el notebook completo e interactivo con todo el código, las visualizaciones y las decisiones documentadas paso a paso.</p></li>
+<li><p>📓 <strong><a class="reference internal" href="analisis_exploratorio.html"><span class="std std-doc">Análisis Exploratorio de Datos y Modelado</span></a></strong> — el notebook completo e interactivo con todo el código, las visualizaciones, el modelo de regresión logística y las decisiones documentadas paso a paso.</p></li>
+<li><p>📓 <strong><a class="reference internal" href="Tarea1.html"><span class="std std-doc">Tarea 1 — Lending Club</span></a></strong> — ejercicio del curso sobre otro dataset de riesgo crediticio (Lending Club), con EDA, preprocesamiento y modelado comparado en scikit-learn y PySpark; incluye un caso real de detección de fuga de datos (<code class="docutils literal notranslate"><span class="pre">loan_status</span></code> filtrado por error entre las variables predictoras).</p></li>
 </ul>
 </section>
 <section id="enlaces">
@@ -456,6 +461,7 @@ Departamento de Matemáticas, Física y Ciencia de Datos, Universidad del Norte,
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="paper.html">Reporte de avance (Fase 1) — PDF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analisis_exploratorio.html">Análisis Exploratorio de Datos (EDA) — Give Me Some Credit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tarea1.html">Proyecto Integrador de Aprendizaje Automático</a></li>
 </ul>
 </div>
 </section>
